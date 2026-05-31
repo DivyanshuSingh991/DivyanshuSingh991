@@ -1,6 +1,6 @@
  ## 👨‍💻 About Me  
 
-I’m **Divyanshu Singh**, a B.Tech CSE student at **AITD Kanpur** and a BS Degree student in Data Science and Applications at **IIT Madras**. I have hands-on experience in **AI/ML, Computer Vision, and Mobile App Development** through internships at Rayoscan AI Diagnostics, Shell, and Excelerate. I’m passionate about building AI-driven solutions, particularly in the healthcare and diagnostics space.
+I’m **Divyanshu Singh**, a B.Tech CSE student at **AITD Kanpur** and a BS Degree student in Data Science and Applications at **IIT Madras**. I have hands-on experience in **AI/ML, Computer Vision, and Mobile App Development** through internships at Rayoscan AI Diagnostics, Shell, and Excelerate. I’m passionate about building robust, AI-driven solutions and scalable applications that solve complex real-world challenges across diverse industries.
 
 ## 🧰 Tech Stack
 
