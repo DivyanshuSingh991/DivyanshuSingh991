@@ -22,7 +22,6 @@ I’m **Divyanshu Singh**, a B.Tech CSE student at **AITD Kanpur** and a BS Degr
 |![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)| OpenCV |
 |![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)| Scikit-learn |
 |![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)| FastAPI |
-|![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)| Django |
 |![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)| Flask |
 
 ### 
