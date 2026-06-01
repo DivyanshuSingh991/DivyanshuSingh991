@@ -2,28 +2,42 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Briefcase, Code } from 'lucide-react';
 
-const internship = {
-  role: 'Python Development Intern',
-  company: 'Codveda',
-  period: 'April 2025 – May 2025',
-  description: 'Gained hands-on experience in Python development, working on various tools and applications.'
-};
+const internships = [
+  {
+    role: 'AI Intern – Healthcare',
+    company: 'Rayoscan AI Diagnostics Private Limited',
+    period: 'March 2026 – Present',
+    description: 'Developed an AI pipeline for RCT detection using YOLOv8 and image segmentation (U-Net) on dental radiographs.'
+  },
+  {
+    role: 'AI Intern – Green Skills',
+    company: 'Shell (Skills4Future Program)',
+    period: 'Oct 2025 – Nov 2025',
+    description: 'Focused on AI and Data Analytics through project-based learning, including model building and evaluation.'
+  },
+  {
+    role: 'Mobile App Engineering Intern',
+    company: 'Excelerate',
+    period: 'Oct 2025 – Nov 2025',
+    description: 'Developed cross-platform mobile applications using Flutter in collaboration with Saint Louis University.'
+  }
+];
 
 const projects = [
   {
-    title: 'To-Do List Application',
-    description: 'A desktop application to manage daily tasks. Features include adding, viewing, deleting, and marking tasks as complete. Data is stored locally using JSON.',
-    tech: ['Tkinter', 'Python', 'JSON'],
+    title: 'AI-Powered RCT Detection System',
+    description: 'An automated Root Canal Treatment detection pipeline using YOLOv8/v11 and panoramic dental radiographs, achieving a 0.87 mAP score.',
+    tech: ['YOLOv8', 'Computer Vision', 'Python'],
   },
   {
-    title: 'Weather API App',
-    description: 'An application that fetches and displays real-time weather data for any city using the OpenWeatherMap API.',
-    tech: ['Python', 'API'],
+    title: 'Excelerate Hub App',
+    description: 'A cross-platform mobile application built with Flutter and Dart, featuring reusable UI components and dynamic API integration.',
+    tech: ['Flutter', 'Dart', 'API'],
   },
   {
-    title: 'Flipkart Product Scraper GUI',
-    description: 'A graphical user interface tool to scrape product information from Flipkart. Built with BeautifulSoup for web scraping and Tkinter for the GUI.',
-    tech: ['BeautifulSoup', 'Tkinter', 'Python'],
+    title: 'OPD Optimizer App',
+    description: 'A Flutter-based app designed for scalable OPD workflow management, reducing manual coordination and improving operational efficiency.',
+    tech: ['Flutter', 'Mobile Development'],
   },
 ];
 
@@ -38,17 +52,19 @@ export default function ExperienceSection() {
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 font-headline"><Briefcase /> Internship</h3>
-            <Card>
-              <CardHeader>
-                <CardTitle>{internship.role}</CardTitle>
-                <CardDescription>{internship.company} | {internship.period}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{internship.description}</p>
-              </CardContent>
-            </Card>
+          <div className="lg:col-span-1 space-y-6">
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 font-headline"><Briefcase /> Internships</h3>
+            {internships.map((intern, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{intern.role}</CardTitle>
+                  <CardDescription>{intern.company} | {intern.period}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{intern.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 font-headline"><Code /> Projects</h3>

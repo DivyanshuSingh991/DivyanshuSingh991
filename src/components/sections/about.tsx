@@ -8,6 +8,11 @@ const education = [
     period: '2024 – Present',
   },
   {
+    degree: 'BS in Data Science and Application',
+    institution: 'IIT Madras',
+    period: '2024 – Present',
+  },
+  {
     degree: '12th Grade',
     institution: 'Sigma School of Excellence, Jhalawar',
     period: '2023',

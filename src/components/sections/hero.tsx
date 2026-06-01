@@ -16,7 +16,7 @@ export default function HeroSection() {
                 Hi, I’m Divyanshu Singh
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto">
-                Aspiring Developer | Tech Enthusiast | Python & Web Developer
+                Aspiring Developer | AI/ML Developer | Python & Web Developer
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">

@@ -13,32 +13,27 @@ const skillCategories: SkillCategory[] = [
   {
     title: 'Languages',
     icon: Code,
-    skills: ['Python', 'C', 'Java', 'HTML', 'CSS'],
+    skills: ['Python', 'Dart', 'SQL', 'C'],
   },
   {
-    title: 'Libraries & Frameworks',
+    title: 'AI & Machine Learning',
     icon: Cpu,
-    skills: ['TensorFlow', 'Keras', 'OpenCV', 'Tkinter', 'BeautifulSoup'],
+    skills: ['TensorFlow', 'Keras', 'OpenCV', 'Scikit-learn', 'YOLOv8', 'Image Segmentation'],
   },
   {
-    title: 'Web Development',
+    title: 'Frameworks & Libraries',
     icon: Globe,
-    skills: ['Wix', 'Wix Studio'],
+    skills: ['Flutter', 'FastAPI', 'Flask'],
   },
   {
-    title: 'APIs & Tools',
+    title: 'Tools & Platforms',
     icon: GitBranch,
-    skills: ['Web Services API', 'Git', 'GitHub', 'PyCharm'],
+    skills: ['Git', 'GitHub', 'VS Code', 'PyCharm'],
   },
   {
     title: 'Databases',
     icon: Database,
-    skills: ['SQLite'],
-  },
-  {
-    title: 'Other Tools',
-    icon: Wrench,
-    skills: ['Microsoft Office Suite'],
+    skills: ['SQL', 'SQLite', 'MongoDB'],
   },
 ];
 
