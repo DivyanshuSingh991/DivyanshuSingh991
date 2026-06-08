@@ -31,6 +31,7 @@ I’m **Divyanshu Singh**, a B.Tech CSE student at **AITD Kanpur** and a BS Degr
 |![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)| GitHub |
 |![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white) |Visual Studio Code  |
 |![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=flat&logo=google-colab&logoColor=white)| Google Colab |
+|![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=flat&logo=Kaggle&logoColor=white)| Kaggle |
 
 ## 💼 Work Experience
 
