@@ -1,16 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Code, 
+  Code2, 
   Database, 
-  Globe, 
   Cpu, 
   GitBranch, 
   BarChart3, 
-  Layers, 
   Smartphone,
   Sparkles,
-  Terminal
+  Terminal,
+  Server,
+  Layers
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -23,8 +23,8 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'AI, Machine Learning & Vision',
-    subtitle: 'Deep learning architectures & CV workflows',
+    title: 'AI, Deep Learning & Vision',
+    subtitle: 'Neural architectures & CV detection',
     icon: Cpu,
     skills: [
       'Machine Learning',
@@ -43,8 +43,8 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Data Science & Scientific Computing',
-    subtitle: 'Data processing, manipulation & visualization',
+    title: 'Data Science & Analytics',
+    subtitle: 'Data manipulation & visualization',
     icon: BarChart3,
     skills: [
       'OpenCV',
@@ -60,8 +60,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Programming Languages',
-    subtitle: 'Core programming & scripting languages',
-    icon: Code,
+    subtitle: 'Core systems & scripting languages',
+    icon: Code2,
     skills: [
       'Python',
       'Dart',
@@ -74,8 +74,8 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Frameworks & App Development',
-    subtitle: 'Cross-platform mobile, backend & desktop GUIs',
+    title: 'Frameworks & App Engineering',
+    subtitle: 'Cross-platform mobile & backend APIs',
     icon: Smartphone,
     skills: [
       'Flutter',
@@ -90,7 +90,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Databases & Storage',
-    subtitle: 'Relational & persistent data engines',
+    subtitle: 'Persistent storage & relational DBMS',
     icon: Database,
     skills: [
       'SQLite',
@@ -101,87 +101,90 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Tools, Platforms & Version Control',
-    subtitle: 'Developer environments & productivity tools',
+    title: 'Tools & Environments',
+    subtitle: 'DevOps, IDEs & version control',
     icon: GitBranch,
     skills: [
       'Git',
       'GitHub',
       'PyCharm',
       'VS Code',
-      'Microsoft Office Suite',
       'Jupyter Notebook',
-      'Linux / Bash'
+      'Linux / Bash',
+      'Microsoft Office Suite'
     ],
   },
 ];
 
 export default function SkillsSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
-      <div className="container px-4 md:px-6">
+    <section id="skills" className="w-full py-20 md:py-28 relative">
+      <div className="container max-w-6xl px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-3xl mx-auto">
-          <Badge variant="outline" className="px-3.5 py-1 text-xs uppercase tracking-wider font-semibold border-primary/40 bg-primary/10 text-primary">
-            Technical Proficiency
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl font-headline text-foreground">
-            Skills &amp; Technologies
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+            <Sparkles className="w-3.5 h-3.5" />
+            Capabilities
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline text-foreground">
+            Technical Stack &amp; Skills
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            A comprehensive overview of my technical stack spanning artificial intelligence, computer vision, data analytics, mobile engineering, and backend development.
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+            A comprehensive overview of programming languages, machine learning frameworks, data science libraries, and developer tools in my workflow.
           </p>
         </div>
 
         {/* Skills Cards Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {skillCategories.map((category) => (
-            <Card key={category.title} className="flex flex-col justify-between border-border/80 hover:border-primary/40 transition-all hover:shadow-lg bg-card">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
-                    <category.icon className="w-6 h-6" />
+          {skillCategories.map((category) => {
+            const Icon = category.icon;
+            return (
+              <div 
+                key={category.title} 
+                className="p-6 rounded-2xl glass-card flex flex-col justify-between hover:border-primary/50 hover:shadow-xl transition-all duration-300 group"
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2.5 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold font-headline text-foreground">{category.title}</h4>
+                      <p className="text-xs text-muted-foreground">{category.subtitle}</p>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-lg font-bold font-headline">{category.title}</CardTitle>
-                    <CardDescription className="text-xs text-muted-foreground mt-0.5">
-                      {category.subtitle}
-                    </CardDescription>
+
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {category.skills.map((skill) => (
+                      <span 
+                        key={skill} 
+                        className="text-xs font-medium px-2.5 py-1 rounded-lg bg-secondary/80 text-foreground/90 border border-border/60 hover:border-primary/40 hover:bg-primary/10 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className="text-xs font-medium px-2.5 py-1 bg-secondary/80 hover:bg-primary/20 hover:text-foreground border border-border/60 transition-colors"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
         {/* Highlight Banner */}
-        <div className="mt-12 p-6 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="p-2 rounded-lg bg-primary/20 text-primary shrink-0 hidden sm:block">
+        <div className="mt-12 p-6 rounded-2xl border border-primary/30 bg-primary/5 dark:bg-primary/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-primary/20 text-primary shrink-0 hidden sm:block">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">Continuous Learning &amp; Adaptation</h4>
+              <h4 className="text-sm font-bold text-foreground">Continuous Research &amp; Applied Innovation</h4>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Always exploring modern architectures, multimodal AI models, edge computing, and real-time computer vision applications.
+                Constantly expanding expertise in multimodal AI, neural object detection (YOLO), edge ML inference, and high-performance apps.
               </p>
             </div>
           </div>
-          <Badge variant="outline" className="text-xs border-primary/40 text-primary font-semibold shrink-0">
+          <Badge variant="outline" className="text-xs border-primary/40 text-primary font-bold px-3 py-1 shrink-0 rounded-full">
             IIT Madras &amp; AITD Kanpur
           </Badge>
         </div>

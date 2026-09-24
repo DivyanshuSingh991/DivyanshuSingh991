@@ -1,145 +1,142 @@
-import { Mail, Linkedin, Github, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Mail, Linkedin, Github, Phone, MapPin, Send, MessageSquare, Sparkles, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export default function ContactSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
+    <section id="contact" className="w-full py-20 md:py-28 relative">
+      <div className="container max-w-6xl px-4 sm:px-6">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-3xl mx-auto">
-          <Badge variant="outline" className="px-3.5 py-1 text-xs uppercase tracking-wider font-semibold border-primary/40 bg-primary/10 text-primary">
-            Connect
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl font-headline text-foreground">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+            <Sparkles className="w-3.5 h-3.5" />
             Get In Touch
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline text-foreground">
+            Let’s Build Something Amazing
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            I am always open to discussing new opportunities, internship roles, AI/ML collaborations, and software engineering projects.
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+            I am actively exploring internship opportunities, research collaborations in AI/ML &amp; Computer Vision, and software development projects.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2 items-start">
+        <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2 items-stretch">
           
-          {/* Contact Details Cards */}
-          <div className="space-y-4">
+          {/* Left Column: Direct Contact Cards */}
+          <div className="space-y-4 flex flex-col justify-between">
             
-            {/* Email */}
-            <Card className="border-border/80 hover:border-primary/40 transition-all hover:shadow-md">
-              <CardContent className="p-5 flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div className="overflow-hidden">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Email Address</h3>
-                  <a 
-                    href="mailto:divyanshusingh991991@gmail.com" 
-                    className="text-base font-semibold text-foreground hover:text-primary transition-colors truncate block"
-                  >
-                    divyanshusingh991991@gmail.com
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Email Card */}
+            <div className="p-5 rounded-2xl glass-card hover:border-primary/50 hover:shadow-lg transition-all flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                <Mail className="h-5 w-5" />
+              </div>
+              <div className="overflow-hidden flex-grow">
+                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">Email Address</span>
+                <a 
+                  href="mailto:divyanshusingh991991@gmail.com" 
+                  className="text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors truncate block mt-0.5"
+                >
+                  divyanshusingh991991@gmail.com
+                </a>
+              </div>
+            </div>
 
-            {/* Phone */}
-            <Card className="border-border/80 hover:border-primary/40 transition-all hover:shadow-md">
-              <CardContent className="p-5 flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Phone / WhatsApp</h3>
-                  <a 
-                    href="tel:+918840857762" 
-                    className="text-base font-semibold text-foreground hover:text-primary transition-colors block"
-                  >
-                    +91 8840857762
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Phone Card */}
+            <div className="p-5 rounded-2xl glass-card hover:border-primary/50 hover:shadow-lg transition-all flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                <Phone className="h-5 w-5" />
+              </div>
+              <div className="flex-grow">
+                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">Phone / WhatsApp</span>
+                <a 
+                  href="tel:+918840857762" 
+                  className="text-sm sm:text-base font-bold text-foreground hover:text-primary transition-colors block mt-0.5"
+                >
+                  +91 8840857762
+                </a>
+              </div>
+            </div>
 
-            {/* Location */}
-            <Card className="border-border/80 hover:border-primary/40 transition-all hover:shadow-md">
-              <CardContent className="p-5 flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Location</h3>
-                  <p className="text-base font-semibold text-foreground">
-                    Kanpur, Uttar Pradesh, India
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Location Card */}
+            <div className="p-5 rounded-2xl glass-card hover:border-primary/50 hover:shadow-lg transition-all flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div className="flex-grow">
+                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">Location</span>
+                <p className="text-sm sm:text-base font-bold text-foreground mt-0.5">
+                  Kanpur, Uttar Pradesh, India
+                </p>
+              </div>
+            </div>
 
           </div>
 
-          {/* Social Profiles & Quick Message */}
-          <div className="space-y-4">
+          {/* Right Column: Social Profiles & CTA Card */}
+          <div className="space-y-4 flex flex-col justify-between">
             
             {/* LinkedIn */}
-            <Card className="border-border/80 hover:border-primary/40 transition-all hover:shadow-md">
-              <CardContent className="p-5 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0">
-                    <Linkedin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">LinkedIn Profile</h3>
-                    <p className="text-sm font-semibold text-foreground">divyanshu-singh-386940336</p>
-                  </div>
+            <div className="p-5 rounded-2xl glass-card hover:border-primary/50 hover:shadow-lg transition-all flex items-center justify-between gap-4 group">
+              <div className="flex items-center gap-4 overflow-hidden">
+                <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                  <Linkedin className="h-5 w-5" />
                 </div>
-                <Button asChild size="sm" variant="outline" className="border-primary/30 shrink-0">
-                  <a 
-                    href="https://www.linkedin.com/in/divyanshu-singh-386940336" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Connect
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+                <div className="overflow-hidden">
+                  <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">LinkedIn</span>
+                  <p className="text-sm font-bold text-foreground truncate mt-0.5">divyanshu-singh-386940336</p>
+                </div>
+              </div>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/80 hover:bg-primary hover:text-primary-foreground shrink-0 text-xs">
+                <a 
+                  href="https://www.linkedin.com/in/divyanshu-singh-386940336" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Connect
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            </div>
 
             {/* GitHub */}
-            <Card className="border-border/80 hover:border-primary/40 transition-all hover:shadow-md">
-              <CardContent className="p-5 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0">
-                    <Github className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">GitHub Profile</h3>
-                    <p className="text-sm font-semibold text-foreground">DivyanshuSingh991</p>
-                  </div>
+            <div className="p-5 rounded-2xl glass-card hover:border-primary/50 hover:shadow-lg transition-all flex items-center justify-between gap-4 group">
+              <div className="flex items-center gap-4 overflow-hidden">
+                <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                  <Github className="h-5 w-5" />
                 </div>
-                <Button asChild size="sm" variant="outline" className="border-primary/30 shrink-0">
-                  <a 
-                    href="https://github.com/DivyanshuSingh991" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Follow
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+                <div className="overflow-hidden">
+                  <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">GitHub</span>
+                  <p className="text-sm font-bold text-foreground truncate mt-0.5">DivyanshuSingh991</p>
+                </div>
+              </div>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/80 hover:bg-primary hover:text-primary-foreground shrink-0 text-xs">
+                <a 
+                  href="https://github.com/DivyanshuSingh991" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Follow
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            </div>
 
-            {/* Quick Action Box */}
-            <div className="p-5 rounded-xl border border-primary/30 bg-primary/5 text-center space-y-3">
-              <h4 className="text-base font-semibold text-foreground">Ready to collaborate?</h4>
-              <p className="text-xs text-muted-foreground">
-                Feel free to drop a direct email or connect on LinkedIn. I usually respond within 24 hours.
-              </p>
-              <Button asChild className="w-full">
-                <a href="mailto:divyanshusingh991991@gmail.com?subject=Collaboration%20Opportunity">
+            {/* Direct Message Action Card */}
+            <div className="p-5 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/15 via-primary/5 to-accent/10 flex flex-col justify-between gap-3 text-left">
+              <div>
+                <h4 className="text-sm font-bold text-foreground flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  Have a project or open role?
+                </h4>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Send me a direct email. I am always excited to discuss technical challenges and innovative projects.
+                </p>
+              </div>
+              <Button asChild className="w-full rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold shadow-md shadow-primary/20">
+                <a href="mailto:divyanshusingh991991@gmail.com?subject=Inquiry%20from%20Portfolio">
                   <Send className="w-4 h-4 mr-2" />
-                  Send an Email
+                  Send an Email Directly
                 </a>
               </Button>
             </div>

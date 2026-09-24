@@ -7,7 +7,8 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#0b0f19] text-foreground selection:bg-primary/25 selection:text-primary;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   * {
     @apply border-border;
@@ -16,57 +17,125 @@
 
 @layer base {
   :root {
-    --background: 31 48% 94%;
-    --foreground: 25 20% 25%;
-    --card: 60 13% 95%;
-    --card-foreground: 25 20% 25%;
-    --popover: 60 13% 95%;
-    --popover-foreground: 25 20% 25%;
-    --primary: 25 29% 76%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 26 33% 87%;
-    --secondary-foreground: 25 20% 25%;
-    --muted: 32 16% 80%;
-    --muted-foreground: 25 20% 25%;
-    --accent: 25 29% 76%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 26 33% 87%;
-    --input: 26 33% 87%;
-    --ring: 25 29% 76%;
-    --radius: 0.5rem;
-    --chart-1: 25 40% 65%;
-    --chart-2: 25 35% 55%;
-    --chart-3: 25 30% 45%;
-    --chart-4: 32 25% 70%;
-    --chart-5: 31 35% 80%;
+    --background: 215 28% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 25% 92%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 215 25% 92%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 221 83% 53%;
+    --radius: 1.25rem;
   }
 
   .dark {
-    --background: 25 10% 10%;
-    --foreground: 30 30% 95%;
-    --card: 25 10% 15%;
-    --card-foreground: 30 30% 95%;
-    --popover: 25 10% 10%;
-    --popover-foreground: 30 30% 95%;
-    --primary: 25 40% 65%;
-    --primary-foreground: 25 10% 10%;
-    --secondary: 25 10% 20%;
-    --secondary-foreground: 30 30% 95%;
-    --muted: 25 10% 20%;
-    --muted-foreground: 30 20% 70%;
-    --accent: 25 40% 65%;
-    --accent-foreground: 25 10% 10%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 25 10% 25%;
-    --input: 25 10% 20%;
-    --ring: 25 40% 65%;
-    --chart-1: 25 40% 65%;
-    --chart-2: 25 35% 55%;
-    --chart-3: 25 30% 45%;
-    --chart-4: 32 25% 70%;
-    --chart-5: 31 35% 80%;
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 223 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 223 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 223 47% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 188 86% 53%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 223 47% 14%;
+    --input: 223 47% 14%;
+    --ring: 217 91% 60%;
   }
+}
+
+/* App Glassmorphic & Modern Profile App UI utilities */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  background: rgba(var(--card), 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.8);
+  border-radius: 1.5rem;
+}
+
+.dark .profile-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+}
+
+.profile-card-subtle {
+  background: hsl(var(--secondary) / 0.5);
+  border: 1px solid hsl(var(--border) / 0.6);
+  border-radius: 1.25rem;
+}
+
+.dark .profile-card-subtle {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.25rem;
+}
+
+.app-dock {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+}
+
+.dark .app-dock {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 30%, #60a5fa 70%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root:not(.dark) .gradient-text {
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 70%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
 }

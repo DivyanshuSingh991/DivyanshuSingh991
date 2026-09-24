@@ -1,48 +1,58 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { GraduationCap, Award, CheckCircle2, Trophy, Users, Sparkles, BookOpen } from 'lucide-react';
+import { GraduationCap, Award, CheckCircle2, Trophy, Users, Sparkles, BookOpen, School, Calendar, MapPin } from 'lucide-react';
 
 const education = [
   {
-    degree: 'BS Degree in Data Science and Applications',
+    degree: 'BS in Data Science and Applications',
     institution: 'Indian Institute of Technology (IIT) Madras',
+    location: 'Chennai (Online/Hybrid)',
     period: 'September 2024 – Present',
     details: 'Focusing on Machine Learning, Mathematical Foundations, Data Structures, and Python Programming.',
-    status: 'Foundation Level Completed'
+    status: 'Foundation Level Completed',
+    highlight: true,
   },
   {
-    degree: 'B.Tech in Computer Science and Engineering',
-    institution: 'Dr. Ambedkar Institute of Technology for Handicapped (AITD), Kanpur',
+    degree: 'B.Tech in Computer Science & Engineering',
+    institution: 'Dr. Ambedkar Institute of Technology for Handicapped (AITD)',
+    location: 'Kanpur, UP',
     period: 'September 2024 – Present',
-    details: 'Core curriculum covering Data Structures & Algorithms, Object Oriented Programming, DBMS, and Software Engineering.',
-    status: 'Ongoing'
+    details: 'Core engineering curriculum in Data Structures, Algorithms, DBMS, Operating Systems, and Software Engineering.',
+    status: 'Ongoing',
+    highlight: true,
   },
   {
     degree: 'Senior Secondary (Class XII - Science)',
     institution: 'Sigma School of Excellence',
-    period: 'Completed May 2023',
-    details: 'Strong focus on Mathematics, Physics, and Computer Science.',
-    status: 'Completed'
+    location: 'Jhalawar, Rajasthan',
+    period: 'May 2023',
+    details: 'Rigorous coursework in Physics, Chemistry, Mathematics, and Computer Science.',
+    status: 'Completed',
+    highlight: false,
   },
   {
     degree: 'Secondary School (Class X)',
     institution: 'St. Anthony Public School',
-    period: 'Completed May 2021',
-    details: 'Foundational secondary school education with academic excellence.',
-    status: 'Completed'
+    location: 'Lucknow, UP',
+    period: 'May 2021',
+    details: 'Foundational secondary school academic curriculum with high distinction.',
+    status: 'Completed',
+    highlight: false,
   },
 ];
 
 const achievements = [
   {
-    title: 'Foundation Level in Programming and Data Science',
+    title: 'Foundation Level in Programming & Data Science',
     organization: 'IIT Madras BS Degree Program',
-    description: 'Successfully completed the rigorous Foundation Level in Programming and Data Science with exemplary performance in Python and computational thinking.'
+    description: 'Successfully completed the rigorous Foundation Level in Programming and Data Science with mastery in Python and computational thinking.',
+    badge: 'Academics'
   },
   {
     title: 'India AI Impact Buildathon 2026',
     organization: 'GUVI & HCL',
-    description: 'Participated in the national level buildathon, engineering AI-driven solutions to tackle real-world challenges.'
+    description: 'Selected and participated in the national level AI buildathon, engineering generative & vision models for impactful real-world scenarios.',
+    badge: 'Hackathon'
   }
 ];
 
@@ -50,10 +60,10 @@ const certifications = [
   {
     title: 'Artificial Intelligence',
     issuer: 'Samsung Innovation Campus',
-    type: 'AI & Deep Learning'
+    type: 'Deep Learning'
   },
   {
-    title: 'Artificial Intelligence and Data Analytics',
+    title: 'Artificial Intelligence & Data Analytics',
     issuer: 'AICTE | Edunet Foundation | Shell',
     type: 'Green Skills'
   },
@@ -70,167 +80,190 @@ const certifications = [
   {
     title: 'Python Development Intern Certification',
     issuer: 'Codveda',
-    type: 'Software Development'
+    type: 'Software Engineering'
   }
 ];
 
-const campusEngagement = [
+const campusActivities = [
   {
-    role: 'Event Anchor & Coordinator',
-    event: 'SHANKHNAAD 2025 (Flagship Cultural Festival)',
-    description: 'Anchored the flagship cultural event, demonstrating effective stage presence, event coordination, and high audience engagement across multi-day sessions.'
+    role: 'Stage Anchor & Event Coordinator',
+    event: 'SHANKHNAAD 2025 (Flagship Cultural Event)',
+    description: 'Anchored the flagship cultural festival, managing high-energy audience interactions, schedule coordination, and stage presentations.'
   },
   {
-    role: 'Creative Visual Designer',
+    role: 'Creative Wall Doodle Artist',
     event: 'SHANKHNAAD 2025',
-    description: 'Designed and executed creative wall doodles and thematic artwork, enhancing the aesthetic atmosphere and visual identity of the cultural fest.'
+    description: 'Conceptualized and painted thematic creative wall doodles and visual decorations, enhancing the ambiance and identity of the festival.'
   }
 ];
 
 export default function AboutSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
-      <div className="container px-4 md:px-6">
+    <section id="about" className="w-full py-20 md:py-28 relative">
+      <div className="container max-w-6xl px-4 sm:px-6">
         
-        {/* Intro Section */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <Badge variant="outline" className="px-3.5 py-1 text-xs uppercase tracking-wider font-semibold border-primary/40 bg-primary/10 text-primary">
-            About Divyanshu
-          </Badge>
+        {/* Section Header */}
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+            <Sparkles className="w-3.5 h-3.5" />
+            Background &amp; Profile
+          </div>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline text-foreground">
-            Bridging Theory with Practical AI Engineering
+            Academic Excellence &amp; Passion
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            I am a passionate developer currently pursuing a dual academic path with a B.Tech in CSE at AITD Kanpur and a BS in Data Science &amp; Applications at IIT Madras. With hands-on internship experience in Computer Vision (YOLOv8/v11, U-Net), Python automation, and Flutter app engineering, I love building end-to-end intelligent systems that solve real problems.
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+            Combining rigorous academic foundations at IIT Madras and AITD Kanpur with hands-on AI engineering, computer vision research, and cross-platform mobile development.
           </p>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
-          {/* Education Column */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 border-b pb-3">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <GraduationCap className="w-6 h-6" />
+        {/* Bento Grid Layout */}
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
+          
+          {/* Education Column (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="flex items-center justify-between border-b border-border/70 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold font-headline">Education Timeline</h3>
+                  <p className="text-xs text-muted-foreground">Dual degrees and previous schooling</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold font-headline">Education</h3>
-                <p className="text-xs text-muted-foreground">Academic journey and degrees</p>
-              </div>
+              <Badge variant="outline" className="text-xs border-primary/30 text-primary">
+                2021 – Ongoing
+              </Badge>
             </div>
 
             <div className="space-y-4">
               {education.map((edu, index) => (
-                <Card key={index} className="transition-all hover:shadow-md border-border/70 hover:border-primary/40">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <CardTitle className="text-lg font-semibold">{edu.degree}</CardTitle>
-                        <CardDescription className="text-sm font-medium text-foreground/80 mt-0.5">
-                          {edu.institution}
-                        </CardDescription>
-                      </div>
-                      <Badge variant="secondary" className="text-xs shrink-0 whitespace-nowrap">
+                <div 
+                  key={index} 
+                  className={`p-5 rounded-2xl glass-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg ${
+                    edu.highlight ? 'border-primary/30 bg-primary/[0.03]' : ''
+                  }`}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-2">
+                    <div>
+                      <h4 className="text-base font-bold text-foreground font-headline flex items-center gap-2">
+                        {edu.degree}
+                        {edu.highlight && (
+                          <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
+                        )}
+                      </h4>
+                      <p className="text-sm font-semibold text-primary mt-0.5">
+                        {edu.institution}
+                      </p>
+                    </div>
+                    <div className="flex sm:flex-col items-end gap-1.5 shrink-0">
+                      <Badge variant="secondary" className="text-[11px] font-medium">
                         {edu.period}
                       </Badge>
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <p className="text-sm text-muted-foreground">{edu.details}</p>
-                    {edu.status && (
-                      <div className="inline-flex items-center gap-1.5 text-xs text-primary font-medium bg-primary/5 px-2 py-0.5 rounded">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        {edu.status}
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
+                    {edu.details}
+                  </p>
+                  <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-border/50 text-xs">
+                    <span className="text-muted-foreground flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-primary/70" />
+                      {edu.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-md text-[11px]">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      {edu.status}
+                    </span>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column: Achievements & Certifications & Campus */}
-          <div className="space-y-8">
+          {/* Right Column: Achievements & Certifications & Leadership (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
             
             {/* Achievements */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 border-b pb-3">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                  <Trophy className="w-6 h-6" />
+              <div className="flex items-center gap-3 border-b border-border/70 pb-4">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                  <Trophy className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-headline">Achievements &amp; Honors</h3>
-                  <p className="text-xs text-muted-foreground">Key milestones and competition participation</p>
+                  <h3 className="text-xl font-bold font-headline">Key Honors</h3>
+                  <p className="text-xs text-muted-foreground">Recognitions &amp; Hackathons</p>
                 </div>
               </div>
 
               <div className="space-y-3">
                 {achievements.map((item, index) => (
-                  <Card key={index} className="border-border/70 hover:border-primary/40 transition-all">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-base font-semibold">{item.title}</CardTitle>
-                        <Badge variant="outline" className="text-xs border-primary/30 text-primary">{item.organization}</Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </CardContent>
-                  </Card>
+                  <div key={index} className="p-4 rounded-2xl glass-card hover:border-primary/40 transition-all">
+                    <div className="flex items-start justify-between gap-2 mb-1.5">
+                      <h4 className="text-sm font-bold text-foreground">{item.title}</h4>
+                      <Badge variant="outline" className="text-[10px] border-primary/30 text-primary shrink-0">
+                        {item.badge}
+                      </Badge>
+                    </div>
+                    <p className="text-xs font-medium text-primary mb-1">{item.organization}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Certifications */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 border-b pb-3">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                  <Award className="w-6 h-6" />
+              <div className="flex items-center gap-3 border-b border-border/70 pb-4">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                  <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-headline">Certifications</h3>
-                  <p className="text-xs text-muted-foreground">Professional &amp; technical credentials</p>
+                  <h3 className="text-xl font-bold font-headline">Certifications</h3>
+                  <p className="text-xs text-muted-foreground">Industry validated credentials</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="p-3.5 rounded-lg border border-border/80 bg-card hover:border-primary/40 transition-all flex flex-col justify-between">
-                    <div>
-                      <span className="text-xs font-semibold text-primary block mb-1">{cert.type}</span>
-                      <h4 className="text-sm font-medium leading-snug">{cert.title}</h4>
+                  <div key={index} className="p-3.5 rounded-xl glass-card hover:border-primary/40 transition-all flex items-center justify-between gap-2">
+                    <div className="overflow-hidden">
+                      <span className="text-[10px] font-bold text-primary uppercase tracking-wider block">{cert.type}</span>
+                      <h5 className="text-xs font-semibold text-foreground truncate">{cert.title}</h5>
+                      <p className="text-[11px] text-muted-foreground truncate">{cert.issuer}</p>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-2">{cert.issuer}</p>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Campus Engagement */}
+            {/* Campus & Creative */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 border-b pb-3">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                  <Users className="w-6 h-6" />
+              <div className="flex items-center gap-3 border-b border-border/70 pb-4">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                  <Users className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-headline">Campus Leadership &amp; Creative Works</h3>
-                  <p className="text-xs text-muted-foreground">Cultural anchoring &amp; artistic contributions</p>
+                  <h3 className="text-xl font-bold font-headline">Campus Leadership</h3>
+                  <p className="text-xs text-muted-foreground">Cultural anchoring &amp; doodles</p>
                 </div>
               </div>
 
-              <div className="space-y-3">
-                {campusEngagement.map((item, index) => (
-                  <div key={index} className="p-4 rounded-lg border border-border/80 bg-card">
+              <div className="space-y-2.5">
+                {campusActivities.map((act, index) => (
+                  <div key={index} className="p-3.5 rounded-xl glass-card hover:border-primary/40 transition-all">
                     <div className="flex items-center justify-between gap-2 mb-1">
-                      <h4 className="text-sm font-semibold text-foreground">{item.role}</h4>
-                      <Badge variant="secondary" className="text-xs">{item.event}</Badge>
+                      <h5 className="text-xs font-bold text-foreground">{act.role}</h5>
+                      <Badge variant="secondary" className="text-[10px]">{act.event}</Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{act.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
           </div>
+
         </div>
 
       </div>

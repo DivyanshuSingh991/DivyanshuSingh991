@@ -1,11 +1,9 @@
-import AboutSection from '@/components/sections/about';
-import HeroSection from '@/components/sections/hero';
+import ProfileAppView from '@/components/profile-app';
 
 export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <AboutSection />
-    </>
+    <main className="w-full min-h-screen bg-background text-foreground flex flex-col items-center">
+      <ProfileAppView />
+    </main>
   );
 }
