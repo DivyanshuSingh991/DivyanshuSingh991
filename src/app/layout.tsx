@@ -6,8 +6,8 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'SinghTech Portfolio',
-  description: 'Modern Tech-Inspired Portfolio Website for Divyanshu Singh',
+  title: 'Divyanshu Singh | AI/ML & Software Engineer Portfolio',
+  description: 'Portfolio of Divyanshu Singh - IIT Madras & AITD Kanpur student specializing in Computer Vision, Deep Learning (YOLOv8/v11, U-Net), Flutter, and Python Automation.',
 };
 
 export default function RootLayout({
